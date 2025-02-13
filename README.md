@@ -3,7 +3,7 @@
 # Roadmap
 - [ ] Programme en shell :
     - [ ] faire un programme qui créer les 12 matrices de rotation
-    - [ ] faire un programme qui calcul la rotation d'un vecteur pour créer un nouveau vecteur avec une matrice
+    - [x] faire un programme qui calcul la rotation d'un vecteur pour créer un nouveau vecteur avec une matrice
     - [ ] faire un print
     - [ ] créer un graphe avec toutes les possibilitées
     - [ ] faire un ordi qui trouve la solution tout seul (chemin le plus court du graphe)
