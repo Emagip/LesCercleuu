@@ -1,4 +1,3 @@
-matrice_test = [[0,0,0,0,0,1],[0,1,0,0,0,0],[0,0,1,0,0,0],[0,0,0,1,0,0],[1,0,0,0,0,0],[0,0,0,0,1,0]]
 def conv_str(matrice_in):
     conv_out = str(len(matrice_in))+"$"
     for lignes in matrice_in:
@@ -19,8 +18,6 @@ def conv_matrice(str_in):
     long_ligne = int(long_ligne)
     i+=1
     char = str_in[i]
-    print(f'long_ligne: {long_ligne}')
-    print(f'len: {len(str_in)}')
     lastr = ""
     for char in str_in[i:]:
         lastr += char
@@ -36,7 +33,3 @@ def conv_matrice(str_in):
             actu += char
     return conv_out
 
-
-a = conv_str(matrice_test)
-print(a)
-print(conv_matrice(a))
