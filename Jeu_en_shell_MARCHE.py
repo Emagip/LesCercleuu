@@ -1,6 +1,7 @@
 #importations
 
 from random import shuffle
+from copy import deepcopy
 
 #fonctions
 def creation_des_matrices(n,D):
@@ -87,15 +88,20 @@ D10 = {"c1T":[1,2,3,4,5,0,6,7,8,9],"c1H":[5,0,1,2,3,4,6,7,8,9],
        "c2T":[6,1,2,3,4,5,7,8,9,0],"c2H":[9,1,2,3,4,5,0,6,7,8]}
 
 Lcarac2 = [[0,None],[1,None],[2,"o"],[3,"A"],[4,"B"],[5,"C"],[6,"D"],[7,"E"],[8,"F"]]
-
-JeuDepart = [2,3,3,3,4,4]
-MonJeu = [2,3,3,3,4,4]
-shuffle(MonJeu)
-Matrice_Mouv = creation_des_matrices(6,D6)
-
-affiche_jeu(MonJeu,Lcarac2)
+Matrice_Mouv = creation_des_matrices(8,D8)
+D_Jeux = {6:[2,3,3,3,4,4],8:[2,3,3,3,3,4,4,4],10:[2,3,3,3,3,3,4,4,4,4]}
 
 ## boucle Jeu
+nb = 0 
+while nb not in [6,8,10,12]:
+    print("veuillez donner le nombre de côtés")
+    nb = int(input('---> '))
+
+JeuDepart = D_Jeux[nb]
+MonJeu = deepcopy(D_Jeux[nb])
+shuffle(MonJeu)
+affiche_jeu(MonJeu,Lcarac2)
+
 while not fin(MonJeu):
     mes_dir = [["c1T_M","c1H_M"],["c2T_M","c2H_M"]]
     print("choisir le cerlce (0 ou 1)")
