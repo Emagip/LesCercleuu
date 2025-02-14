@@ -39,6 +39,10 @@ def affiche_jeu(J,Lsymb):
             print("  "+Lcar[4]+"     |     \ ")
             print("  |     "+Lcar[0]+"      "+Lcar[9])
             print("  "+Lcar[3]+"     |     / ")
-            print("  '-"+Lcar[2]+"-"+Lcar[1]+"-'-"+Lcar[11]+"-"+Lcar[10]+"'")            
+            print("  '-"+Lcar[2]+"-"+Lcar[1]+"-'-"+Lcar[11]+"-"+Lcar[10]+"'")
     else :
         print("je ne sais pas faire")
+
+Lcarac2 = [[0,None],[1,None],[2,"o"],[3,"A"],[4,"B"],[5,"C"],[6,"D"],[7,"E"],[8,"F"]]
+JJ = [2,3,3,3,4,4]
+affiche_jeu(JJ,Lcarac2)
