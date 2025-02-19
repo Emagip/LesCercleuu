@@ -5,10 +5,10 @@ from Jeu_en_shell_MARCHE import MonJeu,Matrice_Mouv,rotation
 
 #fonctions
 
-def mise_en_place(n,Jeu): #n est le nombre de côté
+def mise_en_place(n): #n est le nombre de côté
     global magasin,Ltout
     global Lkdo,pris,permu
-    Lkdo = Jeu[:] #le jeu de depart mélanger
+    Lkdo = MonJeu[:] #le jeu de depart mélanger
     Ltout = [] # conteneur des permutatuons terminé au nb de n!
     pris = [False]*n # distingue les kdo deja dans permu et ceux qu'il n'y sont pas encore
     permu = []# la permutation en cours de construction
@@ -43,9 +43,30 @@ def creation_graphe():
         G[S] = voisin[:]
     return G
 
+def parc_LargM(GM,S_E, verboseVF):
+    """ S_E et les sommets i sont des int. \n"""
+    ordre = len(GM)
+    Lparcourus = []
+    file = [] #init de la file FIFO à vide
+    file.append(S_E) # debut algo parcours en largeur
+    while not len(file) == 0 : # tant que la file n'est pas vide
+        S = file.pop(0)# CREE LE COMPORTEMENT DE FileFIFO
+        L_des_voisins = GM[S]
+        # S est un int entre 0 et ordre-1 inclus
+        # si la file est trop remplie,
+        for voisin in L_des_voisins:
+            if not(voisin in Lparcourus or voisin in file):
+                file.append(voisin)
+        Lparcourus.append(S)
+        if verboseVF : print(" --- ",file)# debogage
+    if len(Lparcourus) == ordre and verboseVF :
+        print("Graphe connexe à partir de S_E : ",S_E)
+    return Lparcourus
+
 mise_en_place(6)
 for i in range(6):
     Pepenono_rec(i)
 
 MonGraphe = creation_graphe()
-print(MonGraphe)
+#print(MonGraphe)
+print(parc_LargM(MonGraphe, 1669, False))
