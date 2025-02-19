@@ -1,17 +1,15 @@
 # importaions
 
 from codage_jeu import *
-from Jeu_en_shell_MARCHE import MonJeu
-from copy import deepcopy
+from Jeu_en_shell_MARCHE import MonJeu,Matrice_Mouv,rotation
 
 #fonctions
 
-def mise_en_place(n): #n est le nombre de côté
+def mise_en_place(n,Jeu): #n est le nombre de côté
     global magasin,Ltout
     global Lkdo,pris,permu
-    magasin = MonJeu[:] #le jeu de depart mélanger
+    Lkdo = Jeu[:] #le jeu de depart mélanger
     Ltout = [] # conteneur des permutatuons terminé au nb de n!
-    Lkdo = magasin[:n]
     pris = [False]*n # distingue les kdo deja dans permu et ceux qu'il n'y sont pas encore
     permu = []# la permutation en cours de construction
 
@@ -33,4 +31,14 @@ def Pepenono_rec(i):
     pris[i] = False
     permu.pop()
 
-
+def creation_graphe():
+    G = {}
+    for PermuJeu in Ltout:
+        voisin = []
+        for cle in  Matrice_Mouv:
+            L = rotation(PermuJeu,Matrice_Mouv[cle])
+            etiq = encoder_jeu(L)
+            voisin.append(etiq)
+        S = encoder_jeu(PermuJeu)
+        G[S] = voisin[:]
+    return G
