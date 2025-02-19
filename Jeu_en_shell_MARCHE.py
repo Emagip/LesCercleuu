@@ -1,7 +1,6 @@
 #importations
 
 from random import shuffle
-from copy import deepcopy
 
 #fonctions
 def creation_des_matrices(n,D):
@@ -92,7 +91,7 @@ Matrice_Mouv = creation_des_matrices(6,D6)
 D_Jeux = {6:[2,3,3,3,4,4],8:[2,3,3,3,3,4,4,4],10:[2,3,3,3,3,3,4,4,4,4]}
 
 ## boucle Jeu
-nb = 0 
+nb = 6
 while nb not in [6,8,10,12]:
     print("veuillez donner le nombre de côtés")
     nb = int(input('---> '))
@@ -100,15 +99,17 @@ while nb not in [6,8,10,12]:
 JeuDepart = D_Jeux[nb]
 MonJeu = D_Jeux[nb][:]
 shuffle(MonJeu)
-affiche_jeu(MonJeu,Lcarac2)
 
-while not fin(MonJeu):
-    mes_dir = [["c1T_M","c1H_M"],["c2T_M","c2H_M"]]
-    print("choisir le cerlce (0 ou 1)")
-    cercle = int(input("---> "))
-    print("choisir le sens Trigo = 0, Horraire = 1")
-    sens = int(input("---> "))
-    MonJeu = rotation(MonJeu,Matrice_Mouv[mes_dir[cercle][sens]])
-    affiche_jeu(MonJeu,Lcarac2)
+#seulement si exectué directement
+if __name__ == "__main__":
+    while not fin(MonJeu):
+        affiche_jeu(MonJeu,Lcarac2)
+        mes_dir = [["c1T_M","c1H_M"],["c2T_M","c2H_M"]]
+        print("choisir le cerlce (0 ou 1)")
+        cercle = int(input("---> "))
+        print("choisir le sens Trigo = 0, Horraire = 1")
+        sens = int(input("---> "))
+        MonJeu = rotation(MonJeu,Matrice_Mouv[mes_dir[cercle][sens]])
+        affiche_jeu(MonJeu,Lcarac2)
 
-print("vous avez gagné !")
+    print("vous avez gagné !")

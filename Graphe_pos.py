@@ -42,3 +42,10 @@ def creation_graphe():
         S = encoder_jeu(PermuJeu)
         G[S] = voisin[:]
     return G
+
+mise_en_place(6)
+for i in range(6):
+    Pepenono_rec(i)
+
+MonGraphe = creation_graphe()
+print(MonGraphe)
