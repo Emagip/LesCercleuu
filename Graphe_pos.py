@@ -43,13 +43,12 @@ def creation_graphe():
         G[S] = voisin[:]
     return G
 
-def parc_LargM(GM,S_E, verboseVF):
+def parc_LargM(GM,S_E, S_S):
     """ S_E et les sommets i sont des int. \n"""
-    ordre = len(GM)
     Lparcourus = []
     file = [] #init de la file FIFO à vide
     file.append(S_E) # debut algo parcours en largeur
-    while not len(file) == 0 : # tant que la file n'est pas vide
+    while not len(file) == 0 and S_S not in Lparcourus: # tant que la file n'est pas vide
         S = file.pop(0)# CREE LE COMPORTEMENT DE FileFIFO
         L_des_voisins = GM[S]
         # S est un int entre 0 et ordre-1 inclus
@@ -58,9 +57,6 @@ def parc_LargM(GM,S_E, verboseVF):
             if not(voisin in Lparcourus or voisin in file):
                 file.append(voisin)
         Lparcourus.append(S)
-        if verboseVF : print(" --- ",file)# debogage
-    if len(Lparcourus) == ordre and verboseVF :
-        print("Graphe connexe à partir de S_E : ",S_E)
     return Lparcourus
 
 mise_en_place(6)
@@ -69,4 +65,7 @@ for i in range(6):
 
 MonGraphe = creation_graphe()
 #print(MonGraphe)
-print(parc_LargM(MonGraphe, 1669, False))
+
+lacle = list(MonGraphe.keys())[0]
+
+print(parc_LargM(MonGraphe,lacle, 346))
