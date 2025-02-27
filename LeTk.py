@@ -31,11 +31,29 @@ coords_set = {
 traced = {}
 for nom, info in coords_set.items():
     traced[nom] = [
-            canvas.create_arc(info[0][0][0], info[0][0][1], info[0][1][0], info[0][1][1], outline=couleurs[info[2]], style='chord', fill=couleurs[info[2]], start=info[0][2],extent = info[0][3]),
-            canvas.create_arc(info[1][0][0], info[1][0][1], info[1][1][0], info[1][1][1], outline=couleurs[info[2]], style='chord', fill=couleurs[info[2]], start=info[1][2],extent = info[1][3])
+            canvas.create_arc(info[0][0][0], info[0][0][1],
+                              info[0][1][0], info[0][1][1],
+                              outline=couleurs[info[2]], fill=couleurs[info[2]],
+                              style='chord',
+                              start=info[0][2],extent = info[0][3]),
+
+            canvas.create_arc(info[1][0][0], info[1][0][1],
+                              info[1][1][0], info[1][1][1],
+                              outline=couleurs[info[2]], fill=couleurs[info[2]],
+                              style='chord', 
+                              start=info[1][2],extent = info[1][3])
         ]
-    canvas.create_arc(info[0][0][0], info[0][0][1], info[0][1][0], info[0][1][1], outline='black', style='arc', width=3, start=info[0][2],extent = info[0][3])
-    canvas.create_arc(info[1][0][0], info[1][0][1], info[1][1][0], info[1][1][1], outline='black', style='arc', width=3, start=info[1][2],extent = info[1][3])
+    canvas.create_arc(info[0][0][0], info[0][0][1],
+                      info[0][1][0], info[0][1][1],
+                      outline='black', style='arc',
+                      width=3,
+                      start=info[0][2],extent = info[0][3])
+
+    canvas.create_arc(info[1][0][0], info[1][0][1],
+                      info[1][1][0], info[1][1][1],
+                      outline='black', style='arc',
+                      width=3,
+                      start=info[1][2],extent = info[1][3])
 
 print(traced)
 root.mainloop()
