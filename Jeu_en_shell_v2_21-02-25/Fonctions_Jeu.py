@@ -54,7 +54,7 @@ def affiche_jeu(J,Lsymb):
             print("  '-"+Lcar[1]+"-'")
         if len(J) == 8 :
             print("  .--"+Lcar[4]+"-.-"+Lcar[5]+".")
-            print("  "+Lcar[3]+"    |   \ ")
+            print("  "+Lcar[3]+"    |   \\ ")
             print("  |    "+Lcar[0]+"    "+Lcar[6])
             print("  "+Lcar[2]+"    |   / ")
             print("  '--"+Lcar[1]+"-'-"+Lcar[7]+"'")
@@ -66,7 +66,7 @@ def affiche_jeu(J,Lsymb):
             print("  "+Lcar[2]+"--"+Lcar[1]+"-'-"+Lcar[9]+"-'")
         if len(J) == 12 :
             print("  .-"+Lcar[5]+"-"+Lcar[6]+"-.-"+Lcar[7]+"-"+Lcar[8]+".")
-            print("  "+Lcar[4]+"     |     \ ")
+            print("  "+Lcar[4]+"     |     \\ ")
             print("  |     "+Lcar[0]+"      "+Lcar[9])
             print("  "+Lcar[3]+"     |     / ")
             print("  '-"+Lcar[2]+"-"+Lcar[1]+"-'-"+Lcar[11]+"-"+Lcar[10]+"'")
