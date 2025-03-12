@@ -1,6 +1,10 @@
 #fonctions
 def creation_des_matrices(n,D):
-    # remplissage matrice
+    """
+    créer toute les matrices de mouvement à partir du dictionnaire des positions
+    du jeu pour les indices en appelant crea_matrice() et renvoie un dictionnaire contenant les 4 matrices 
+    de rotations
+    """
     M_c1T = crea_matrice(D["c1T"],n)
     M_c1H = crea_matrice(D["c1H"],n)
     M_c2T = crea_matrice(D["c2T"],n)
@@ -10,6 +14,10 @@ def creation_des_matrices(n,D):
     return D_Mat
 
 def crea_matrice(L,n):
+    """
+    renvoie une matrice de rotations en fonctions des indices dans L et en fonctions 
+    de la taille du jeu n
+    """
     M = []
     for i in range(len(L)):
         M.append([0]*n)
@@ -17,6 +25,9 @@ def crea_matrice(L,n):
     return M
 
 def rotation(old_vecteur, matrice_rotation):
+    """
+    renvoie la rotation du jeu par la matrice de rotations pris en paramètre
+    """
     n = len(old_vecteur)
     new_vecteur = []
     for i in range(n):
@@ -54,7 +65,7 @@ def affiche_jeu(J,Lsymb):
             print("  '-"+Lcar[1]+"-'")
         if len(J) == 8 :
             print("  .--"+Lcar[4]+"-.-"+Lcar[5]+".")
-            print("  "+Lcar[3]+"    |   \\ ")
+            print("  "+Lcar[3]+"    |   \ ")
             print("  |    "+Lcar[0]+"    "+Lcar[6])
             print("  "+Lcar[2]+"    |   / ")
             print("  '--"+Lcar[1]+"-'-"+Lcar[7]+"'")
@@ -66,7 +77,7 @@ def affiche_jeu(J,Lsymb):
             print("  "+Lcar[2]+"--"+Lcar[1]+"-'-"+Lcar[9]+"-'")
         if len(J) == 12 :
             print("  .-"+Lcar[5]+"-"+Lcar[6]+"-.-"+Lcar[7]+"-"+Lcar[8]+".")
-            print("  "+Lcar[4]+"     |     \\ ")
+            print("  "+Lcar[4]+"     |     \ ")
             print("  |     "+Lcar[0]+"      "+Lcar[9])
             print("  "+Lcar[3]+"     |     / ")
             print("  '-"+Lcar[2]+"-"+Lcar[1]+"-'-"+Lcar[11]+"-"+Lcar[10]+"'")
