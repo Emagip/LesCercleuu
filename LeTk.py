@@ -57,12 +57,12 @@ for nom, info in coords_set.items():
 
 print(traced)
 position = [4,3,4,3,3,2]
-def change():
+def change(pos):
     i = 0
     for nom, obj in traced.items():
-        canvas.itemconfig(obj[0], fill=couleurs[position[i]], outline=couleurs[position[i]])
-        canvas.itemconfig(obj[1], fill=couleurs[position[i]], outline=couleurs[position[i]])
+        canvas.itemconfig(obj[0], fill=couleurs[pos[i]], outline=couleurs[pos[i]])
+        canvas.itemconfig(obj[1], fill=couleurs[pos[i]], outline=couleurs[pos[i]])
         i+=1
 
-root.after(1000, change)
+root.after(1000, change(position))
 root.mainloop()
