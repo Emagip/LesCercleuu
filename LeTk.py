@@ -1,8 +1,8 @@
 import tkinter as tk
 
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 1920, 1080
 X_OFFSET, Y_OFFSET = WIDTH // 2, HEIGHT // 2
-SCALE = 40
+SCALE = 50
 
 def transform(x, y):
     return X_OFFSET + x * SCALE, Y_OFFSET - y * SCALE
@@ -56,4 +56,13 @@ for nom, info in coords_set.items():
                       start=info[1][2],extent = info[1][3])
 
 print(traced)
+position = [4,3,4,3,3,2]
+def change():
+    i = 0
+    for nom, obj in traced.items():
+        canvas.itemconfig(obj[0], fill=couleurs[position[i]], outline=couleurs[position[i]])
+        canvas.itemconfig(obj[1], fill=couleurs[position[i]], outline=couleurs[position[i]])
+        i+=1
+
+root.after(1000, change)
 root.mainloop()
