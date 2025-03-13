@@ -1,0 +1,1 @@
+ordi_joue(MonGraphe,MonJeu,JeuDepart,Matrice_Mouv,Lcarac2,n)
