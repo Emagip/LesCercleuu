@@ -8,7 +8,7 @@
     - [x] créer un graphe avec toutes les possibilitées
     - [x] faire un ordi qui trouve la solution tout seul (chemin le plus court du graphe)
     - [ ] (IA?)
-- [ ] Interface tkinter :
+- [x] Interface tkinter :
     - [x] faire les 2 cercles avec les 'cotes'
-    - [ ] faire la mécanique de rotation
-    - [ ] assigner les bind a la rotation
+    - [x] faire la mécanique de rotation
+    - [x] assigner les bind a la rotation
