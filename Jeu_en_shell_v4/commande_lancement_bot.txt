@@ -1,0 +1,23 @@
+ordi_joue(MonGraphe,MonJeu,JeuDepart,Matrice_Mouv,Lcarac2,n)
+jouer_solo(MonJeu,JeuDepart,Lcarac2,mes_dir,Matrice_Mouv)
+joueur_vs_Ordi(MonJeu,JeuDepart,MonGraphe,Lcarac2,mes_dir,Matrice_Mouv,n,exen)
+
+n = 6
+1 => exen = 2 moyLong = 7.2 ; moyOpti = 5
+2 => exen = 1 moyLong = 6 ; moyOpti = 4.6
+3 => exen = 0 moyLong =
+
+n = 8
+4 => exen = 4
+5 => exen = 3
+6 => exen = 2
+
+n = 10
+7 => exen = 6
+8 => exen = 4
+9 => exen = 1 
+
+modif gagne pour egalite dans nv 3 ??
+
+n = 8 probleme rotation => matrice, index out of range => jsute con pas refait de nv jeu/ graphe
+n = 10 probleme while père != fils comprend po, des fois oui des fois non
