@@ -3,18 +3,19 @@ import tkinter as tk
 import Fonctions_Jeu as FJeu
 from random import shuffle
 
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 400, 300
 X_OFFSET, Y_OFFSET = WIDTH // 2, HEIGHT // 2
-SCALE = 40
+SCALE = 20
 
-D_pos = {6:{"c1T":[1,2,3,0,4,5],"c1H":[3,0,1,2,4,5],"c2T":[4,1,2,3,5,0],"c2H":[5,1,2,3,0,4]}}
+D_pos = {6:{"c1T":[1,2,3,0,4,5],"c1H":[3,0,1,2,4,5],"c2T":[4,1,2,3,5,0],"c2H":[5,1,2,3,0,4]},
+         8:{"c1T":[1,2,3,4,0,5,6,7],"c1H":[4,0,1,2,3,5,6,7],"c2T":[5,1,2,3,4,6,7,0],"c2H":[7,1,2,3,4,0,5,6]}}
+
 D_Jeux = {6:[2,3,3,3,4,4],8:[2,3,3,3,3,4,4,4],10:[2,3,3,3,3,3,4,4,4,4]}
-Matrice_Mouv = FJeu.creation_des_matrices(6, D_pos[6])
+Matrice_Mouv = FJeu.creation_des_matrices(8, D_pos[8])
 mes_dir = [["c1T_M","c1H_M"],["c2T_M","c2H_M"]]
-JeuDepart = D_Jeux[6]
-MonJeu = D_Jeux[6][:]
+JeuDepart = D_Jeux[8]
+MonJeu = D_Jeux[8][:]
 shuffle(MonJeu)
-
 MonJeu1 = MonJeu.copy()
 MonJeu2 = MonJeu.copy()
 
@@ -38,15 +39,17 @@ canvas2.pack()
 #canvas.create_oval(x0, y0, x1, y1, outline="red", width=2)
 
 couleurs = [None, None, "white", "red", "blue"]
-x0, y0 = transform(-2.4 - 5.6, 0 + 5.6)
-x1, y1 = transform(-2.4 + 5.6, 0 - 5.6)
+x0, y0 = transform(-3 - 5, 0 + 5)
+x1, y1 = transform(-3 + 5, 0 - 5)
 coords_set = {
-        "c0": [[transform(-5.95 - 8.67, 0 + 8.67), transform(-5.95 + 8.67, 0 - 8.67), 23.51, -47.02], [transform(4 - 4, 0 + 4), transform(4 + 4, 0 - 4), 120.03, 119.94],2],
-        "c1": [[transform(-2.4 - 8.4, -10.62 + 8.4), transform(-2.4 + 8.4, -10.62 - 8.4), 58.41, 63.18],[(x0, y0), (x1, y1),-38.17,-103.66],3],
-        "c2": [[transform(-10.22 - 4.87, 0 + 4.87), transform(-10.22 + 4.87, 0 - 4.87), 45.33, -90.65],[(x0,y0), (x1, y1), 141.83, 76.34], 3],
-        "c3": [[transform(-2.4 - 8.4, 10.62 + 8.4), transform(-2.4 + 8.4, 10.62 - 8.4), -58.41, -63.18],[(x0,y0), (x1,y1),38.17, 103.66], 3],
-        "c4": [[transform(9.01 - 8.71, 8.66 + 8.71), transform(9.01 + 8.71, 8.66 - 8.71), -96.65, -46.78],[transform(4 - 4, 0 + 4), transform(4 + 4, 0 - 4), 0, 120.03],4],
-        "c5": [[transform(9.01 - 8.71, -8.66 + 8.71), transform(9.01 + 8.71, -8.66 - 8.71), 96.65, 46.78],[transform(4 - 4, 0 + 4), transform(4 + 4, 0 - 4), 0, -120.03],4]
+        "c0": [[transform(-3.24 - 5.24, 0 + 5.24), transform(-3.24 + 5.24, 0 - 5.24), 32.69, -65.38], [transform(4 - 4, 0 + 4), transform(4 + 4, 0 - 4), 135, 90],2],
+        "c1": [[transform(-0.36 - 4.84, -7.42 + 4.88), transform(-0.36 + 4.88, -7.42 - 4.88), 71.5, 75.87],[(x0, y0), (x1, y1),-34.16,-72.58],3],
+        "c2": [[transform(-9.32 - 4.88, -4.71 + 4.88), transform(-9.32 + 4.88, -4.71 - 4.88), -1.11, 75.43],[(x0,y0), (x1, y1), -106.74, -73.15], 3],
+        "c3": [[transform(-9.34 - 4.88, 4.68 + 4.88), transform(-9.34 + 4.88, 4.68 - 4.88), 1.32, -75.37],[(x0,y0), (x1,y1),180, -73.12], 3],
+        "c4": [[transform(-0.37 - 4.89, 7.47 + 4.88), transform(-0.37 + 4.88, 7.47 - 4.88), -71.65, -75.18],[(x0, y0), (x1, y1), 34.16, 72.83],3],
+        "c5": [[transform(4 - 5.24, 7.24 + 5.24), transform(4 + 5.24, 7.24 - 5.24), -57.31, -65.38],[transform(4 - 4, 0 + 4), transform(4 + 4, 0 - 4), 45, 90],4],
+        "c6": [[transform(11.24 - 5.24, 0 + 5.24), transform(11.24 + 5.24, 0 - 5.24), 147.31, 65.38],[transform(4 - 4, 0 + 4), transform(4 + 4, 0 - 4), -45, 90],4],
+        "c7": [[transform(4 - 5.24, -7.24 + 5.24), transform(4 + 5.24, -7.24 - 5.24), 57.31, 65.38],[transform(4 - 4, 0 + 4), transform(4 + 4, 0 - 4), -45, -90],4],
         }
 traced1 = {}
 traced2 = {}
@@ -181,5 +184,6 @@ root.bind('<Up>', Grand_h2)
 root.bind('<Down>', Grand_t2)
 root.bind('<Left>', Petit_h2)
 root.bind('<Right>', Petit_t2)
+
 
 root.mainloop()
