@@ -1,0 +1,12 @@
+CAHIER DES CHARGES:
+
+-faire le programme en shell
+  -créer un graphe avec toutes les possibilités
+  -faire un print qui marche
+  -faire un ordi qui trouve la solution toute seule (avec le chemin le + court du graphe)
+  -faire une IA avec un réseau de neurones
+
+-faire un interface tkinter
+  -faire les 2 cercles avec les 'côtés'
+  -faire la mécanique de rotation 
+  -assigner cette méca a un bind
