@@ -1,0 +1,33 @@
+ordi_joue(MonGraphe,MonJeu,JeuDepart,Matrice_Mouv,Lcarac2,n)
+jouer_solo(MonJeu,JeuDepart,Lcarac2,mes_dir,Matrice_Mouv)
+joueur_vs_Ordi(MonJeu,JeuDepart,MonGraphe,Lcarac2,mes_dir,Matrice_Mouv,n,exen)
+
+n = 6
+1 => exen = 2 moyLong = 7.2 ; moyOpti = 5
+2 => exen = 1 moyLong = 6 ; moyOpti = 4.6
+3 => exen = 0 moyLong =
+
+n = 8
+4 => exen = 4
+5 => exen = 3
+6 => exen = 2
+
+n = 10
+7 => exen = 6
+8 => exen = 4
+9 => exen = 1 
+
+modif gagne pour egalite dans nv 3 ??
+
+n = 8 probleme rotation => matrice, index out of range => jsute con pas refait de nv jeu/ graphe
+n = 10 probleme while père != fils comprend po, des fois oui des fois non
+
+ L = list(MonGraphe.keys())
+>>> L
+[346, 358, 361, 406, 409, 421, 598, 601, 613, 661, 1114, 1126, 1129, 1174, 1177, 1189, 1306, 1318, 1321, 1354, 1378, 1384, 1414, 1417, 1426, 1432, 1441, 1444, 1558, 1561, 1573, 1606, 1609, 1618, 1624, 1633, 1636, 1669, 1681, 1684, 2134, 2137, 2149, 2197, 2326, 2329, 2341, 2374, 2377, 2386, 2392, 2401, 2404, 2437, 2449, 2452, 2581, 2629, 2641, 2644]
+>>> trouveChemin(MonGraphe,1558,encoder_jeu(MonJeu))
+[1558, 2134, 2137]
+>>> trouveChemin(MonGraphe,1561,encoder_jeu(MonJeu))
+[1561, 2137]
+>>> for s in L :
+...     trouveChemin(MonGraphe,s,encoder_jeu(MonJeu))
