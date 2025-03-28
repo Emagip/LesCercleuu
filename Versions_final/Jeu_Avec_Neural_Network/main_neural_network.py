@@ -217,4 +217,5 @@ for i in range(10):
     
 print(cout_debut/10)
 print(cout_final/10)
+#ça ne marche pas
 
