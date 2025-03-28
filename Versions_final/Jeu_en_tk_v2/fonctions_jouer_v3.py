@@ -1,3 +1,6 @@
+#Projet : Circle Puzzle
+#Auteurs : Victor Frappaz, Maxime Pigeaud, Fabian Peter
+
 #importations
 
 from Fonctions_creation_var import *

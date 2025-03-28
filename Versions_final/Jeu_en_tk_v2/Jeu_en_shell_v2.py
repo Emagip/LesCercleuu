@@ -1,3 +1,6 @@
+#Projet : Circle Puzzle
+#Auteurs : Victor Frappaz, Maxime Pigeaud, Fabian Peter
+
 ### fichier qui créer toute les variables nécéssaire au différentes fonctions du jeu + execution du mini jeu
 #importations
 

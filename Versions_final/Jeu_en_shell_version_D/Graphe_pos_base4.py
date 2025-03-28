@@ -1,3 +1,6 @@
+#Projet : Circle Puzzle
+#Auteurs : Victor Frappaz, Maxime Pigeaud, Fabian Peter
+
 # importaions
 
 from codage_jeu import *

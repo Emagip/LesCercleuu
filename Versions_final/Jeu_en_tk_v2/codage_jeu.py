@@ -1,3 +1,6 @@
+#Projet : Circle Puzzle
+#Auteurs : Victor Frappaz, Maxime Pigeaud, Fabian Peter
+
 def encoder_jeu(jeu):
     """Encode le vecteur colonne qui représente le jeu en un int
     -> enlève 2 à chaque chiffre du vecteur colonne puis convertit en base 4"""

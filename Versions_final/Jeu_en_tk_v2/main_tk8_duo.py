@@ -1,3 +1,6 @@
+#Projet : Circle Puzzle
+#Auteurs : Victor Frappaz, Maxime Pigeaud, Fabian Peter
+
 import tkinter as tk
 #import time
 import Fonctions_creation_var as FJeu

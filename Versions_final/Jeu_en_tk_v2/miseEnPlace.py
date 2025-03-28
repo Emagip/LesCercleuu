@@ -1,3 +1,6 @@
+#Projet : Circle Puzzle
+#Auteurs : Victor Frappaz, Maxime Pigeaud, Fabian Peter
+
 import Graphe_pos_base4 as GPB
 import Trouve_chemin as balade
 import Fonctions_creation_var as FJeu
